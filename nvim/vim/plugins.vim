@@ -29,5 +29,5 @@ Plug 'mbbill/undotree'
 Plug 'andweeb/presence.nvim'
 Plug 'camspiers/snap'
 Plug 'ternjs/tern_for_vim'
+Plug 'andweeb/presence.nvim'
 call plug#end()
-

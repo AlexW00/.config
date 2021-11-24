@@ -1,5 +1,5 @@
 syntax enable
-colorscheme discord
+colorscheme discordNoBG
 hi onedark guibg=NONE ctermbg=NONE
 set termguicolors 
 
