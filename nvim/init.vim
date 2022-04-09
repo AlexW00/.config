@@ -23,8 +23,9 @@ source $CONFIG/vim/plugConfig/undoTreeConfig.vim
 source $CONFIG/vim/plugConfig/startifyConfig.vim
 source $CONFIG/vim/plugConfig/cocConfig.vim
 source $CONFIG/vim/plugConfig/lightLineConfig.vim
-source $CONFIG/vim/plugConfig/vifmConfig.vim
 source $CONFIG/vim/plugConfig/discordConfig.vim
+source $CONFIG/vim/plugConfig/rangerConfig.vim
+
 
 " locate python bin
 let g:python3_host_prog=$HOME.'/.venv/bin/python3'

@@ -18,5 +18,6 @@ set number
 set numberwidth=3
 set relativenumber
 set mouse=a
-
+set splitbelow
+set splitright
 

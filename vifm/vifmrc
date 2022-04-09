@@ -6,10 +6,9 @@ filetype *.js nvim %f
 filetype *.js code %f
 
 set vicmd=nvim
-colorscheme near-default
 nnoremap J 5j
 nnoremap K 5k
-
+colorscheme iceberg
 " open with quicklook
 nnoremap <space> :!qlmanage -p %c:p >& /dev/null%i<cr> 
 
