@@ -1,5 +1,4 @@
-/usr/local/share/zsh/share/antigen.zsh
-
+source /usr/local/share/antigen/antigen.zsh
 # iterm
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
