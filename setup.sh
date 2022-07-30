@@ -20,8 +20,9 @@ then
     ./install_packages.sh
     rm -rf install_packages.sh
 else
-    echo "Finished setup (with package installation)"
+    echo "Finished setup (without package installation)"
+    exit 0
 fi
 
 
-echo "Finished setup (withut package installation)"
+echo "Finished setup (with package installation)"
