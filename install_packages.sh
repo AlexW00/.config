@@ -5,5 +5,5 @@
 
 # normal packages using pacman
 wget https://raw.githubusercontent.com/AlexW00/.config/master/packages
-sudo pacman -S --needed - < packages
+sudo pacman -S --needed - < ./packages
 rm -rf packages
