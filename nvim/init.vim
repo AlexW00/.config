@@ -25,7 +25,9 @@ source $CONFIG/vim/plugConfig/cocConfig.vim
 source $CONFIG/vim/plugConfig/lightLineConfig.vim
 source $CONFIG/vim/plugConfig/discordConfig.vim
 source $CONFIG/vim/plugConfig/rangerConfig.vim
-
+source $CONFIG/vim/plugConfig/telescope.vim
+source $CONFIG/vim/plugConfig/nvimTree.vim
+source $CONFIG/vim/plugConfig/whichKey.vim
 
 " locate python bin
 let g:python3_host_prog=$HOME.'/.venv/bin/python3'
@@ -35,5 +37,5 @@ let g:python3_host_prog=$HOME.'/.venv/bin/python3'
 "------------------------------------------------------------------------------"
 
 " plugin configs
-lua require('snap-config')
+
 
