@@ -6,11 +6,9 @@ This repo contains my dotfiles.
 
 ### Shell
 
-- zsh
-- antigen
-
 This repo contains dotfiles for the following programs:
 
+- antigen
 - autorandr
 - autostart
 - dunst
@@ -26,8 +24,7 @@ This repo contains dotfiles for the following programs:
 
 ## Installation
 
-1. install the dependencies you want to use
-2. rename your old `.config`
-3. clone the repo to your home directory
-4. move the contents of your old `.config` directory into this newly cloned one (skip duplicate files)
-5. run `~/.config/.setup.sh` to create necessary symlinks
+1. wget https://raw.githubusercontent.com/AlexW00/.config/master/install_packages.sh`
+2. make the file executable with `chmod +x ./install_packages.sh`
+3. execute via `./install_packages.sh`
+4. (AUTOMATIC PACKAGE INSTALLATION ONLY WORKS ON ARCH)
