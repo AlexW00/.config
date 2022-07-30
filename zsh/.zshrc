@@ -1,31 +1,27 @@
-export ZSH="$HOME/.oh-my-zsh"
 export CONFIG="$HOME/.config"
-export ZSH_CONFIG="$CONFIG/zsh"
+export ZSH="$CONFIG/zsh"
 
-ZSH_THEME="miloshadzic"
+# dependencies
+source /usr/share/zsh/share/antigen.zsh
 
-plugins=(
-    fzf
-)
-
-# source files
-source $ZSH/oh-my-zsh.sh
+# source configs
 
 ## common configs
-source $ZSH_CONFIG/.zsh-env-rc
-source $ZSH_CONFIG/.zsh-path-rc
-source $ZSH_CONFIG/.zsh-aliases-rc
+source $ZSH/.zsh-antigen-rc
+source $ZSH/.zsh-env-rc
+source $ZSH/.zsh-path-rc
+source $ZSH/.zsh-aliases-rc
 
 ## user settings
-source $ZSH_CONFIG/.zsh-usr-rc
+source $ZSH/.zsh-usr-rc
 
 ## program specific settings
-source $ZSH_CONFIG/.zsh-usr-rc
+source $ZSH/.zsh-usr-rc
 
 ## platform specific settings
 case `uname` in
   Darwin)
-    source $ZSH_CONFIG/.zsh-macos-rc
+    source $ZSH/.zsh-macos-rc
   ;;
   Linux)
     # commands for Linux go here

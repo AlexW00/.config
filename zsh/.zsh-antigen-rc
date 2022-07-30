@@ -1,0 +1,9 @@
+antigen use oh-my-zsh
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Theme
+antigen theme miloshadzic
+
+antigen apply
