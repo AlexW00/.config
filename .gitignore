@@ -5,6 +5,7 @@
 !/.gitignore
 !/picom.conf
 !/setup.sh
+!/install_packages.sh
 !/readme.md
 
 # Folder to not ignore
