@@ -1,0 +1,3 @@
+# user variables
+export EDITOR=nvim
+export NOTES="~/Documents/NvimNotes"

@@ -3,6 +3,7 @@
 
 # Files to not ignore
 !/.gitignore
+!/picom.conf
 
 # Folder to not ignore
 !/nvim/
@@ -15,5 +16,4 @@
 !/gtk-3.0/
 !/nitrogen/
 !/xfce4/
-!/picom.conf
-!/.zshrc
+!/zsh/

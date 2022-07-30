@@ -1,0 +1,5 @@
+# iterm
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1

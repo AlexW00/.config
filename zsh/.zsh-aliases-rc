@@ -1,0 +1,8 @@
+alias r=ranger
+alias cs="sh ~/Developer/Scripts/Bash/cheat.sh"
+alias dot="~/Developer/Scripts/Bash/dot.sh"
+
+alias exa="exa --icons"
+alias lss="ncdu"
+alias lg="lazygit"
+alias ur-vpn='sudo openfortivpn -c /etc/openfortivpn/ur-config'
