@@ -26,5 +26,4 @@ This repo contains dotfiles for the following programs:
 
 1. run `wget https://raw.githubusercontent.com/AlexW00/.config/master/setup.sh` to download the installation script
 2. make the file executable with `chmod +x ./setup.sh`
-3. execute via `./setup.sh`
-4. (AUTOMATIC PACKAGE INSTALLATION ONLY WORKS ON ARCH)
+3. execute via `./setup.sh` to automatically download and move the .config directory (your old config dir will be renamed, not deleted)
