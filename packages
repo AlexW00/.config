@@ -9,7 +9,6 @@ awesome-terminal-fonts
 dex
 dmenu
 dunst
-endeavouros-xfce4-terminal-colors
 file-roller
 galculator
 gthumb
@@ -45,7 +44,8 @@ tumbler
 xbindkeys
 xdg-user-dirs-gtk
 xed
-xfce4-terminal
 xorg-xbacklight
 xorg-xdpyinfo
 zsh
+python-pywal
+kitty
