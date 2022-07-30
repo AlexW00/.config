@@ -4,6 +4,7 @@
 # Files to not ignore
 !/.gitignore
 !/picom.conf
+!/setup.sh
 
 # Folder to not ignore
 !/nvim/
