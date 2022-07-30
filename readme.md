@@ -24,7 +24,7 @@ This repo contains dotfiles for the following programs:
 
 ## Installation
 
-1. wget https://raw.githubusercontent.com/AlexW00/.config/master/install_packages.sh`
-2. make the file executable with `chmod +x ./install_packages.sh`
-3. execute via `./install_packages.sh`
+1. run `wget https://raw.githubusercontent.com/AlexW00/.config/master/setup.sh` to download the installation script
+2. make the file executable with `chmod +x ./setup.sh`
+3. execute via `./setup.sh`
 4. (AUTOMATIC PACKAGE INSTALLATION ONLY WORKS ON ARCH)
