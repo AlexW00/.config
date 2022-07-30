@@ -7,3 +7,12 @@
 # Folder to not ignore
 !/nvim/
 !/vifm/
+!/i3/
+!/rofi/
+!/autostart/
+!/autorandr/
+!/dunst/
+!/gtk-3.0/
+!/nitrogen/
+!/xfce4/
+!/picom.conf
