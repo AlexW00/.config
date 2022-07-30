@@ -3,4 +3,7 @@ eval "$(pyenv init -)"
 PATH=$(pyenv root)/shims:$PATH
 
 # deno
-export DENO_INSTALL="/Users/alexweichart/.deno"
+export DENO_INSTALL="$HOME/.deno"
+
+#vifm
+export VIFM="$CONFIG/vifm"
