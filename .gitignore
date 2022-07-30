@@ -7,6 +7,7 @@
 !/setup.sh
 !/install_packages.sh
 !/readme.md
+!/packages
 
 # Folder to not ignore
 !/nvim/
