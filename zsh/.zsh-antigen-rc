@@ -1,11 +1,10 @@
 antigen use oh-my-zsh
 
-# suggest packages when command is not found
-antigen bundle command-not-found
-# allows copying paths
 antigen bundle copypath
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+# auto update antigen
+antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 # Theme
 antigen theme miloshadzic
