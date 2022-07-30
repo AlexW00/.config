@@ -1,6 +1,6 @@
 # My Dotfiles
 
-This repo contains my dotfiles.
+This repo contains my dotfiles. Fork of the [Endeavour OS i3 config](https://github.com/endeavouros-team/endeavouros-i3wm-setup)
 
 ## Dependencies
 
