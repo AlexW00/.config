@@ -1,8 +1,16 @@
 export CONFIG="$HOME/.config"
 export ZSH="$CONFIG/zsh"
 
-# dependencies
-source /usr/share/zsh/share/antigen.zsh
+## platform specific settings
+case `uname` in
+  Darwin)
+    source $ZSH/.zsh-macos-rc
+  ;;
+  Linux)
+    source $ZSH/.zsh-linux-rc
+  ;;
+esac
+
 
 # source configs
 
@@ -18,12 +26,3 @@ source $ZSH/.zsh-usr-rc
 ## program specific settings
 source $ZSH/.zsh-usr-rc
 
-## platform specific settings
-case `uname` in
-  Darwin)
-    source $ZSH/.zsh-macos-rc
-  ;;
-  Linux)
-    # commands for Linux go here
-  ;;
-esac
