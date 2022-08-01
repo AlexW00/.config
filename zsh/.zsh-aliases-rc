@@ -1,6 +1,6 @@
 alias r=ranger
 alias cs="$SCRIPTS/Bash/cheat.sh"
-alias dot="$SCRIPTS/Bash/dot.sh"
+alias dot="$SCRIPTS/Bash/dot-launcher/dot.sh"
 
 alias exa="exa --icons"
 alias lss="ncdu"

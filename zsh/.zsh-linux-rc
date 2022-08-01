@@ -1,1 +1,3 @@
 source /usr/share/zsh/share/antigen.zsh
+
+TERM=kitty
