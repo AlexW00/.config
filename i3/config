@@ -379,7 +379,7 @@ exec --no-startup-id sleep 2 && nitrogen --restore
 #exec --no-startup-id feh --bg-fill /usr/share/endeavouros/backgrounds/endeavouros_i3.png
 
 # generate colorscheme
-exec --no-startup-id $CONFIG/wal/scripts/reload_existing_wallpaper.sh
+exec --no-startup-id ~/.config/wal/scripts/generate_colors.sh
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -450,6 +450,27 @@ for_window [class="urxvt"] border pixel 1
 # set position of floating window
 #for_window [class=".*"] move position center
 
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $fg_secondary i3wm.color8
+set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $bg_alt i3wm.color1
+set_from_resource $highlight i3wm.color6
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $highlight       $highlight
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 ######################################
 # color settings for bar and windows #
 ######################################
@@ -466,13 +487,6 @@ set $darkgrey		#383c4a
 set $grey		#b0b5bd
 set $mediumgrey		#8b8b8b
 set $yellowbrown	#e1b700
-
-# define colors for windows:
-#class		        	border		bground		text		indicator	child_border
-client.focused		    $lightblue	$darkblue	$white		$purple		$mediumgrey
-client.unfocused	    $darkblue	$darkblue	$grey		$purple		$darkgrey
-client.focused_inactive	$darkblue	$darkblue	$grey		$purple		$black
-client.urgent		    $urgentred	$urgentred	$white		$purple		$yellowbrown
 
 ############################################
 # bar settings (input comes from i3blocks) #
@@ -496,15 +510,15 @@ bar {
 ##strip_workspace_numbers yes
 strip_workspace_name no
 
-		    colors {
-		    separator          $purple
-		    background         $darkgrey
-		    statusline         $white
+colors {
+    separator          $fg
+    background         $bg
+    statusline         $fg
 #                          		border 		        bg		txt		indicator
-		focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
-		inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
-		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
+    focused_workspace	$highlight $bg $highlight $fg
+    active_workspace	$fg_secondary $bg $fg_secondary $fg
+    inactive_workspace	$bg $bg $fg_secondary $fg_secondary
+    urgent_workspace	$urgentred $urgentred $fg $fg
 	}
 }
 

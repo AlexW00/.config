@@ -14,7 +14,7 @@ configuration {
 	sidebar-mode: 					false;
 }
 
-@import "~/.config/rofi/arc_dark_colors.rasi"
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 
 window {
@@ -78,13 +78,13 @@ element.alternate.active {
 scrollbar {
     width:        4px ;
     border:       0;
-    handle-color: @normal-foreground;
+    handle-color: @background;
     handle-width: 8px ;
     padding:      0;
 }
 mode-switcher {
     border:       2px 0px 0px ;
-    border-color: @separatorcolor;
+    border-color: @background;
 }
 button {
     spacing:    0;
