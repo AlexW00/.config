@@ -28,6 +28,7 @@ source $CONFIG/vim/plugConfig/rangerConfig.vim
 source $CONFIG/vim/plugConfig/telescope.vim
 source $CONFIG/vim/plugConfig/nvimTree.vim
 source $CONFIG/vim/plugConfig/whichKey.vim
+source $CONFIG/vim/plugConfig/lazygit.vim
 
 " locate python bin
 let g:python3_host_prog=$HOME.'/.venv/bin/python3'
