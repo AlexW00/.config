@@ -20,6 +20,7 @@ source $ZSH/.zsh-etc-rc
 source $ZSH/.zsh-env-rc
 source $ZSH/.zsh-path-rc
 source $ZSH/.zsh-aliases-rc
+source $ZSH/.zsh-functions-rc
 
 ## user settings
 source $ZSH/.zsh-usr-rc
