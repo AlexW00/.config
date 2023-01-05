@@ -8,7 +8,6 @@ Plug 'ap/vim-css-color'
 Plug 'Yggdroot/indentLine'
 "Plug 'neovim/nvim-lspconfig'
 "Plug 'hrsh7th/nvim-compe'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'cometsong/CommentFrame.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 " status bar
