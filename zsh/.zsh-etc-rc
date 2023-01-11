@@ -1,7 +1,3 @@
-# pyenv
-eval "$(pyenv init -)"
-PATH=$(pyenv root)/shims:$PATH
-
 # deno
 export DENO_INSTALL="$HOME/.deno"
 
