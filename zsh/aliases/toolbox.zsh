@@ -6,4 +6,5 @@ alias tbls="toolbox list"
 alias tbrm="toolbox rm"
 
 # Quick Runs
-alias u="toolbox run -c util"
+alias u="toolbox run -c u"
+alias howto="u ai ask"
