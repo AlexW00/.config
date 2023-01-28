@@ -1,30 +1,23 @@
 export CONFIG="$HOME/.config"
 export ZSH="$CONFIG/zsh"
 
-## platform specific settings
-case `uname` in
-  Darwin)
-    source $ZSH/.zsh-macos-rc
-  ;;
-  Linux)
-    source $ZSH/.zsh-linux-rc
-  ;;
-esac
-
-
 # source configs
 
+# aliases
+for file in $ZSH//aliases/*; do
+  source $file
+done
+
+
+# functions
+for file in $ZSH//functions/*; do
+  source $file
+done
+
 ## common configs
-source $ZSH/.zsh-path-rc
-source $ZSH/.zsh-antigen-rc
-source $ZSH/.zsh-etc-rc
-source $ZSH/.zsh-env-rc
-source $ZSH/.zsh-aliases-rc
-source $ZSH/.zsh-functions-rc
-
-## user settings
-source $ZSH/.zsh-usr-rc
-
-## program specific settings
-source $ZSH/.zsh-usr-rc
+source $ZSH/path.zsh # paths
+source $ZSH/antigen.zsh # antigen
+source $ZSH/env.zsh # environment variables
+source $ZSH/etc.zsh # program settings
+source $ZSH/usr.zsh # user settings
 
