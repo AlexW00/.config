@@ -3,21 +3,18 @@ export ZSH="$CONFIG/zsh"
 
 # source configs
 
+function sourceAll() {
+  for file in $1/*; do
+    source $file
+  done
+}
+
 # aliases
-for file in $ZSH//aliases/*; do
-  source $file
-done
-
-
-# functions
-for file in $ZSH//functions/*; do
-  source $file
-done
+sourceAll $ZSH/aliases
+sourceAll $ZSH/functions
+sourceAll $ZSH/etc
 
 ## common configs
 source $ZSH/path.zsh # paths
 source $ZSH/antigen.zsh # antigen
 source $ZSH/env.zsh # environment variables
-source $ZSH/etc.zsh # program settings
-source $ZSH/usr.zsh # user settings
-

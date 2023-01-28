@@ -8,6 +8,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle unixorn/autoupdate-antigen.zshplugin
 
 # Theme
-antigen theme miloshadzic
+antigen theme subnixr/minimal
 
 antigen apply
