@@ -8,6 +8,7 @@
 !/install_packages.sh
 !/readme.md
 !/packages
+!/icons
 
 # Folder to not ignore
 !/nvim/
