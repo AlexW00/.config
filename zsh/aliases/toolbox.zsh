@@ -8,3 +8,6 @@ alias tbrm="toolbox rm"
 # Quick Runs
 alias u="toolbox run -c u"
 alias howto="u ai ask"
+alias onefetch="u onefetch"
+
+alias p="toolbox run -c p"

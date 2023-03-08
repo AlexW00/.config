@@ -18,3 +18,6 @@ sourceAll $ZSH/etc
 source $ZSH/path.zsh # paths
 source $ZSH/antigen.zsh # antigen
 source $ZSH/env.zsh # environment variables
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
