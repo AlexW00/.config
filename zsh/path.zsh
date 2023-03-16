@@ -6,7 +6,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="/home/aw/bin:$PATH"
 export PATH="$HOME/gems/bin:$PATH"
 export PATH="/home/aw/.moon/tools/moon/latest:$PATH"
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
 
 export GEM_HOME="$HOME/gems"
-export GOPATH=$HOME/go
