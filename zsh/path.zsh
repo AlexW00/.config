@@ -10,5 +10,6 @@ export PATH="/home/aw/.local/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
-
 export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
