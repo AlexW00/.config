@@ -26,3 +26,4 @@ if [ -f $ZSH/env-private.zsh ]; then
 fi
 
 source $ZSH/plugins.zsh
+export PATH=$PATH:/home/aw/.spicetify
