@@ -3,10 +3,10 @@ SCRIPTS="$HOME/Developer/Scripts"
 # Custom Scripts
 alias dot="$SCRIPTS/Bash/dot-launcher/dot.sh"
 alias gpt="$SCRIPTS/Bash/cli-gpt/cli-gpt.sh -m=gpt-4"
-alias gptj="gpt -s=jp"
+alias jc="gpt -s=jp"
 alias je="gpt -s=jpe"
+alias ba="gpt -s=ba"
+alias baf="gpt -s=baf"
+alias tmux-clean="$SCRIPTS/Bash/tmux-clean.sh"
 
-function jc() {
-    p="$1"
-    gptj -p="$p"
-}
+

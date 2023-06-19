@@ -11,3 +11,6 @@ alias howto="u ai ask"
 alias onefetch="u onefetch"
 
 alias p="toolbox run -c p"
+
+alias t="toolbox run -c t"
+alias mods="t mods"
