@@ -25,9 +25,10 @@ if [ -f $ZSH/env-private.zsh ]; then
   source $ZSH/env-private.zsh
 fi
 
+if [ -f $ZSH/.local.zsh ]; then
+  source $ZSH/.local.zsh
+fi
+
 source $ZSH/plugins.zsh
 export PATH=$PATH:/home/aw/.spicetify
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
