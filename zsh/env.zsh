@@ -1,6 +1,6 @@
 # user variables
 export EDITOR=nvim
-export NOTES="~/Documents/NvimNotes"
+export NOTES="$HOME/Documents/NvimNotes"
 # scripts folder
 export SCRIPTS="$HOME/Developer/Scripts"
 
