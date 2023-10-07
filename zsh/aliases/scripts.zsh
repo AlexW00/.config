@@ -8,5 +8,8 @@ alias je="gpt -s=jpe"
 alias ba="gpt -s=ba"
 alias baf="gpt -s=baf"
 alias tmux-clean="$SCRIPTS/Bash/tmux-clean.sh"
+alias cheat="$SCRIPTS/Bash/cheat.sh"
+
+alias cheats="cd $CHEATSHEETS"
 
 
