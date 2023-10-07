@@ -38,5 +38,4 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'liuchengxu/vim-which-key'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kdheepak/lazygit.nvim'
 call plug#end()
