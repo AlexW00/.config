@@ -3,3 +3,5 @@ if [[ -f /run/.containerenv && -f /run/.toolboxenv ]]; then
   # works with the minimal zsh theme
   export MNML_USER_CHAR="📦"
 fi
+
+export MNML_USER_CHAR=$(bash /home/aw/Developer/Scripts/Bash/container_indicator.sh)
