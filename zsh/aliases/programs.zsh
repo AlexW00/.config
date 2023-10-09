@@ -14,5 +14,5 @@ NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux  attach -t default || tmux new -s default
+    tmux new
 fi
