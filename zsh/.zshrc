@@ -32,3 +32,7 @@ fi
 source $ZSH/plugins.zsh
 export PATH=$PATH:/home/aw/.spicetify
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

@@ -27,7 +27,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
-nnoremap <Leader>vS :split<CR>
+nnoremap <Leader>hs :split<CR>
 nnoremap <Leader>vs :vsplit<CR>
 
 " " Copy to clipboard
