@@ -9,5 +9,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Theme
 antigen bundle subnixr/minimal
-
+antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
+

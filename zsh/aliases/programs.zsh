@@ -13,6 +13,6 @@ NVM_DIR="$HOME/.nvm"
 # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux new
-fi
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    tmux new
+# fi

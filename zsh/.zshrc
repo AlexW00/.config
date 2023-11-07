@@ -33,6 +33,4 @@ source $ZSH/plugins.zsh
 export PATH=$PATH:/home/aw/.spicetify
 
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
