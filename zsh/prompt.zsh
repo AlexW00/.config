@@ -1,0 +1,1 @@
+export PROMPT='$(if [ "$IS_SECURE_ENV" = true ]; then echo "🔒 "; fi)%F{green}%n› %f'
