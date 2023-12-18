@@ -29,7 +29,7 @@ function prompt() {
         prefixes="$prefixes🚀"
     fi
 
-    echo "%F{green}$prefixes %n > %f"
+    echo "%F{green}$prefixes %n› %f"
 }
 
 function rprompt() {
