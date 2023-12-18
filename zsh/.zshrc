@@ -33,4 +33,3 @@ source $ZSH/plugins.zsh
 export PATH=$PATH:/home/aw/.spicetify
 
 
-[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
