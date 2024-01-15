@@ -29,6 +29,7 @@ if [ -f $ZSH/.local.zsh ]; then
   source $ZSH/.local.zsh
 fi
 
+source $ZSH/secure/secure.zsh
 source $ZSH/plugins.zsh
+source $ZSH/prompt.zsh
 export PATH=$PATH:/home/aw/.spicetify
-

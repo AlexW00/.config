@@ -16,26 +16,27 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 " Devicons
 Plug 'ryanoasis/vim-devicons'
-"Nord colorscheme
-"Vifm integration
-Plug 'shapeoflambda/dark-purple.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'McAuleyPenney/vim-dissonance'
 Plug 'justinmk/vim-dirvish'
 Plug 'mhinz/vim-startify'
-Plug 'mbbill/undotree'
 Plug 'ternjs/tern_for_vim'
 Plug 'Shadorain/shadotheme'
 Plug 'andweeb/presence.nvim'
-Plug 'bronson/vim-visual-star-search'
+" Plug 'bronson/vim-visual-star-search'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'arzg/vim-colors-xcode'
-Plug 'iberianpig/ranger-explorer.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'liuchengxu/vim-which-key'
-Plug 'kyazdani42/nvim-tree.lua'
+
+Plug 'unblevable/quick-scope' " quickly jump to starting letters in a line
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'justinmk/vim-sneak'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
+
+
+set conceallevel=0
