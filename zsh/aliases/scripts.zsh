@@ -9,6 +9,7 @@ alias ba="gpt -s=ba"
 alias baf="gpt -s=baf"
 alias tmux-clean="$SCRIPTS/Bash/tmux-clean.sh"
 alias cheat="$SCRIPTS/Bash/cheat.sh"
+alias copy-mr-diff="$SCRIPTS/Bash/copy-mr-diff.zsh"
 
 alias cheats="cd $CHEATSHEETS"
 alias work="python3 $SCRIPTS/Python/work-time-tracker.py start"

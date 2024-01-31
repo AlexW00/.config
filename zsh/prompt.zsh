@@ -5,12 +5,12 @@ function prompt() {
         prefixes="$prefixes👑"
     fi
 
-    if [ "$IS_SECURE_ENV" = true ]; then
-        prefixes="$prefixes🔓"
-    fi
-
     if [ -n "$DOCKER_CONTAINER_NAME" ]; then
         prefixes="$prefixes🐳"
+    fi
+
+    if [ -n "$IS_SECURE_ENV" ]; then
+        prefixes="$prefixes🔓"
     fi
 
     if [[ "$PWD" == *"$UFP_DIR"* ]]; then
@@ -29,7 +29,11 @@ function prompt() {
         prefixes="$prefixes🚀"
     fi
 
-    echo "%F{green}$prefixes %n› %f"
+    if [[ "$PWD" == *"$DV_DEVTOOLS_DIR"* ]]; then
+        prefixes="$prefixes🔧"
+    fi
+
+    echo "%F{green}$prefixes › %f"
 }
 
 function rprompt() {
@@ -54,9 +58,9 @@ function rprompt() {
 
     local final_prompt=""
 
-    if [ -n "$kube_context" ]; then
-        final_prompt="$kube_context"
-    fi
+    # if [ -n "$kube_context" ]; then
+    #     final_prompt="$kube_context"
+    # fi
 
     if [ -n "$git_branch" ]; then
         if [ -n "$final_prompt" ]; then
@@ -65,6 +69,10 @@ function rprompt() {
             final_prompt="$git_branch"
         fi
     fi
+
+    # current path
+    final_prompt="$final_prompt %F{blue}%~%f"
+    
 
     echo "$final_prompt"
 }
