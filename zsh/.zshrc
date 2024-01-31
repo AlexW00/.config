@@ -25,11 +25,10 @@ if [ -f $ZSH/env-private.zsh ]; then
   source $ZSH/env-private.zsh
 fi
 
-if [ -f $ZSH/.local.zsh ]; then
-  source $ZSH/.local.zsh
+source $ZSH/prompt.zsh
+if [ -f $ZSH/local/local.zsh ]; then
+  source $ZSH/local/local.zsh
 fi
 
-source $ZSH/secure/secure.zsh
 source $ZSH/plugins.zsh
-source $ZSH/prompt.zsh
 export PATH=$PATH:/home/aw/.spicetify

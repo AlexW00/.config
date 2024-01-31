@@ -17,7 +17,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 " Devicons
 Plug 'ryanoasis/vim-devicons'
 Plug 'justinmk/vim-dirvish'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'ternjs/tern_for_vim'
 Plug 'Shadorain/shadotheme'
 Plug 'andweeb/presence.nvim'
@@ -29,7 +29,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'liuchengxu/vim-which-key'
+"Plug 'liuchengxu/vim-which-key'
 
 Plug 'unblevable/quick-scope' " quickly jump to starting letters in a line
 Plug 'machakann/vim-highlightedyank'

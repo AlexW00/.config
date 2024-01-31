@@ -19,10 +19,7 @@ source $CONFIG/vim/keybinds.vim
 source $CONFIG/vim/appearance.vim
 
 " plugin configs
-source $CONFIG/vim/plugConfig/startifyConfig.vim
 source $CONFIG/vim/plugConfig/lightLineConfig.vim
-source $CONFIG/vim/plugConfig/discordConfig.vim
-source $CONFIG/vim/plugConfig/whichKey.vim
 source $CONFIG/vim/plugConfig/floatterm.vim
 source $CONFIG/vim/plugConfig/telescope.vim
 source $CONFIG/vim/plugConfig/other.vim
