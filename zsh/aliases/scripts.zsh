@@ -2,6 +2,7 @@ SCRIPTS="$HOME/Developer/Scripts"
 
 # Custom Scripts
 alias dot="$SCRIPTS/Bash/dot-launcher/dot.sh"
+alias poptux="$SCRIPTS/Bash/poptux.sh"
 alias gpt="$SCRIPTS/Bash/cli-gpt/cli-gpt.sh -m=gpt-4"
 alias jc="gpt -s=jp"
 alias je="gpt -s=jpe"
