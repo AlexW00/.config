@@ -9,4 +9,5 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Theme
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle johanhaleby/kubetail
 antigen apply

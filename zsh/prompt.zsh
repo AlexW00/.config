@@ -33,7 +33,18 @@ function prompt() {
         prefixes="$prefixes🔧"
     fi
 
-    echo "%F{green}$prefixes › %f"
+    local kube_info="" # context + NS
+
+    # if kubectx and kubens are installed
+    if command -v kubectx &> /dev/null && command -v kubens &> /dev/null; then
+        local kube_c=$(kubectx -c)
+        local kube_n=$(kubens -c)
+
+        kube_info="$kube_c/$kube_n"
+    fi
+
+
+    echo "%F{green}$prefixes [$kube_info] › %f"
 }
 
 function rprompt() {

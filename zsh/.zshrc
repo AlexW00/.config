@@ -32,3 +32,5 @@ fi
 
 source $ZSH/plugins.zsh
 export PATH=$PATH:/home/aw/.spicetify
+fpath=(/Users/aweichart/.config/zsh/custom/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/aweichart/.antigen/bundles/robbyrussell/oh-my-zsh/lib /Users/aweichart/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/copypath /Users/aweichart/.antigen/bundles/zsh-users/zsh-syntax-highlighting /Users/aweichart/.antigen/bundles/zsh-users/zsh-autosuggestions)
+fpath=(/Users/aweichart/.config/zsh/custom/completions /Users/aweichart/.config/zsh/custom/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.9/functions /Users/aweichart/.antigen/bundles/robbyrussell/oh-my-zsh/lib /Users/aweichart/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/copypath /Users/aweichart/.antigen/bundles/zsh-users/zsh-syntax-highlighting /Users/aweichart/.antigen/bundles/zsh-users/zsh-autosuggestions)
