@@ -85,6 +85,23 @@ function obsidian-save() {
     obsidian-add-all $vault && obsidian-commit-now $vault && obsidian-push $vault
 }
 
+function obsidian-publish() {
+    # check if gh is installed and user is logged in
+    if ! command -v gh &> /dev/null; then
+        echo "gh is not installed. Please install gh and log in."
+        return 1
+    fi
+
+    if ! gh auth status &> /dev/null; then
+        echo "gh is not logged in. Please log in."
+        return 1
+    fi
+
+    echo "Publishing the garden..."
+    gh workflow run "deploy.yaml" --repo "AlexW00/garden" --ref "master"
+
+    echo "Published the garden."
+}
 
 function obsidian-help() {
     echo "obsidian-vaults: list all vaults"
@@ -94,5 +111,7 @@ function obsidian-help() {
     echo "obsidian-push [vault]: push all changes to the vault"
     echo "obsidian-pull [vault]: pull all changes from the vault"
     echo "obsidian-save [vault]: add all changes, commit with the current date, and push to the vault"
+    echo "obsidian-publish: publish the garden"
     echo "obsidian-help: show this help message"
 }
+
