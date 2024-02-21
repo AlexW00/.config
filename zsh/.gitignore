@@ -1,3 +1,4 @@
 env-private.zsh
 .local.zsh
 local/
+antigen.zsh.zwc
