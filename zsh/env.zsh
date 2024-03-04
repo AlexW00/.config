@@ -1,4 +1,5 @@
 # user variables
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR=nvim
 export SCRIPTS="$HOME/Developer/Scripts"
 
