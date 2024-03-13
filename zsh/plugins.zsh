@@ -1,10 +1,20 @@
 local plugins_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/
 
-# if fzf tab dir doesn't exist, clone it
-if [ ! -d "$plugins_dir/fzf-tab" ]; then
-    echo "Cloning fzf-tab"
-    git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-fi
+function install_plugin() {
+    local plugin_name=$1
+    local plugin_url=$2
 
-plugins=(fzf-tab)
+    if [ ! -d "$plugins_dir/$plugin_name" ]; then
+        echo "Cloning $plugin_name"
+        git clone $plugin_url ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/$plugin_name
+    fi
+}
+
+install_plugin "fzf-tab" "https://github.com/Aloxaf/fzf-tab"
+install_plugin "zsh-completions" "https://github.com/zsh-users/zsh-completions"
+install_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions"
+install_plugin "ansible-server" "https://github.com/viasite-ansible/zsh-ansible-server.git"
+install_plugin "docker-zsh-completion" "https://github.com/greymd/docker-zsh-completion.git"
+
+plugins=(fzf-tab zsh-completions zsh-autosuggestions ansible-server docker-zsh-completion)
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
