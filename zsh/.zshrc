@@ -1,8 +1,8 @@
+export ZSH="$HOME/.oh-my-zsh"
 export CONFIG="$HOME/.config"
-export ZSH="$CONFIG/zsh"
+export ZSH_CONFIG="$CONFIG/zsh"
 
 # source configs
-
 function sourceAll() {
   for file in $1/*; do
     source $file
@@ -10,25 +10,24 @@ function sourceAll() {
 }
 
 ## common configs
-source $ZSH/path.zsh # paths
-source $ZSH/antigen.zsh # antigen
-source $ZSH/env.zsh # environment variables
+source $ZSH_CONFIG/path.zsh # paths
+source $ZSH_CONFIG/env.zsh # environment variables
 
 # aliases
-sourceAll $ZSH/aliases
-sourceAll $ZSH/functions
-sourceAll $ZSH/etc
-
+sourceAll $ZSH_CONFIG/aliases
+sourceAll $ZSH_CONFIG/functions
+sourceAll $ZSH_CONFIG/etc
 
 ## source env-private.zsh if it exists
-if [ -f $ZSH/env-private.zsh ]; then
-  source $ZSH/env-private.zsh
+if [ -f $ZSH_CONFIG/env-private.zsh ]; then
+  source $ZSH_CONFIG/env-private.zsh
 fi
 
-source $ZSH/prompt.zsh
-if [ -d "$ZSH/local" ]; then
-    sourceAll "$ZSH/local"
+source $ZSH_CONFIG/prompt.zsh
+if [ -d "$ZSH_CONFIG/local" ]; then
+    sourceAll "$ZSH_CONFIG/local"
 fi
 
-source $ZSH/plugins.zsh
-export PATH=$PATH:/home/aw/.spicetify
+source $ZSH_CONFIG/plugins.zsh
+source $ZSH_CONFIG/completions.zsh
+source $ZSH/oh-my-zsh.sh
