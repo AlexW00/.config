@@ -26,9 +26,10 @@ function load_completion() {
 }
 
 load_completion kubectl 
-load_completion flux 
+load_completion flux
 load_completion helm
 load_completion docker
+load_completion op # doesnt work idk
 
 function delete_all_completions() {
     rm -rf $COMPLETION_DIR/*
