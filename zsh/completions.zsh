@@ -2,9 +2,11 @@
 autoload -Uz compinit
 compinit
 
-KUBECTL_COMPLETION="$HOME/.kubectl_completion"
-FLUX_COMPLETION="$HOME/.flux_completion"
-HELM_COMPLETION="$HOME/.helm_completion"
+
+COMPLETION_DIR="$HOME/.zsh-completions"
+if [ ! -d $COMPLETION_DIR ]; then
+    mkdir -p $COMPLETION_DIR
+fi
 
 function create_completion_if_not_exists() {
     if [ ! -f $1 ]; then
@@ -13,26 +15,21 @@ function create_completion_if_not_exists() {
     fi
 }
 
-# Kubectl completions
-if type kubectl > /dev/null 2>&1; then
-    create_completion_if_not_exists $KUBECTL_COMPLETION kubectl
-    source $KUBECTL_COMPLETION
-fi
+function load_completion() {
+    local type=$1
+    local file="$COMPLETION_DIR/$type"
 
-# Flux completions
-if type flux > /dev/null 2>&1; then
-    create_completion_if_not_exists $FLUX_COMPLETION flux
-    source $FLUX_COMPLETION
-fi
+    if type $1 > /dev/null 2>&1; then
+        create_completion_if_not_exists $file $1
+        source $file
+    fi
+}
 
-# Helm completions
-if type helm > /dev/null 2>&1; then
-    create_completion_if_not_exists $HELM_COMPLETION helm
-    source $HELM_COMPLETION
-fi
+load_completion kubectl 
+load_completion flux 
+load_completion helm
+load_completion docker
 
 function delete_all_completions() {
-    rm -f $KUBECTL_COMPLETION
-    rm -f $FLUX_COMPLETION
-    rm -f $HELM_COMPLETION
+    rm -rf $COMPLETION_DIR/*
 }
