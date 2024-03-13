@@ -2,3 +2,7 @@ env-private.zsh
 .local.zsh
 local/
 antigen.zsh.zwc
+# all cache directories
+**/.zcompdump
+**/.zcompdump.*
+**/cache
