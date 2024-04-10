@@ -32,7 +32,7 @@ max-retries: 5
 # Your desired level of fanciness.
 fanciness: 10
 # Text to show while generating.
-status-text: Generating
+status-text: generating 🪄
 # Default character limit on input to model.
 max-input-chars: 12250
 # Maximum number of tokens in response.
