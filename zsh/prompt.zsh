@@ -44,7 +44,7 @@ function prompt() {
     fi
 
 
-    echo "%F{green}$prefixes [$kube_info] › %f"
+    echo "%F{blue}$prefixes [$kube_info] › %f"
 }
 
 function rprompt() {
