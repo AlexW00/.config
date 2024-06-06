@@ -41,7 +41,7 @@ load_completion flux
 load_completion helm
 load_completion docker
 load_completion talosctl
-load_completion op # doesnt work idk
+load_completion op
 load_completion yq "shell-completion"
 load_completion gitlab-ci-local "--completion"
 
