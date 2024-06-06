@@ -30,6 +30,12 @@ function load_completion() {
     fi
 }
 
+function load_tofu_completion() {
+    if type tofu > /dev/null 2>&1; then
+        complete -o nospace -C /opt/homebrew/bin/tofu tofu
+    fi
+}
+
 load_completion kubectl 
 load_completion flux
 load_completion helm
@@ -37,6 +43,11 @@ load_completion docker
 load_completion talosctl
 load_completion op # doesnt work idk
 load_completion yq "shell-completion"
+load_completion gitlab-ci-local "--completion"
+
+# custom completions
+load_tofu_completion
+
 
 function delete_all_completions() {
     rm -rf $COMPLETION_DIR/*
