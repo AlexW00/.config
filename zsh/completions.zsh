@@ -32,6 +32,7 @@ function load_completion() {
 
 function load_tofu_completion() {
     if type tofu > /dev/null 2>&1; then
+        autoload -U +X bashcompinit && bashcompinit
         complete -o nospace -C /opt/homebrew/bin/tofu tofu
     fi
 }

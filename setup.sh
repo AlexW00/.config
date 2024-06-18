@@ -14,4 +14,7 @@ ln -s "$HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
 
 ln -s "$HOME/.config/.ideavimrc" "$HOME/.ideavimrc"
 
+# setup krew
+./setup_krew.sh
+
 echo "Finished setup (with package installation)"
