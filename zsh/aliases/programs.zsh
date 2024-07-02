@@ -16,3 +16,12 @@ NVM_DIR="$HOME/.nvm"
 # if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 #    tmux new
 # fi
+
+# other function aliases
+
+alias dr="docker"
+alias k="kubectl"
+alias f="flux"
+alias h="helm"
+alias g="git"
+alias v="nvim"
