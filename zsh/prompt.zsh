@@ -40,7 +40,14 @@ function prompt() {
         local kube_c=$(kubectx -c)
         local kube_n=$(kubens -c)
 
-        kube_info="$kube_c/$kube_n"
+        local kubie_prefix=""
+        if command -v kubie &> /dev/null; then
+            if [ -n "$KUBIE_SESSION" ]; then
+                kubie_prefix="%(?.%F{magenta}*%f.%F{red}*%f)"
+            fi
+        fi
+
+        kube_info="${kubie_prefix}${kube_c}/${kube_n}%F{blue}"
     fi
 
 
