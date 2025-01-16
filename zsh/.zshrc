@@ -32,3 +32,5 @@ source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/completions.zsh
 
 source $ZSH/oh-my-zsh.sh
+
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

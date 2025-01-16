@@ -46,6 +46,7 @@ load_completion op
 load_completion hcloud
 load_completion yq "shell-completion"
 load_completion gitlab-ci-local "--completion"
+load_completion velero
 
 # custom completions
 load_tofu_completion
