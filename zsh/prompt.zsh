@@ -37,8 +37,8 @@ function prompt() {
 
     # if kubectx and kubens are installed
     if command -v kubectx &> /dev/null && command -v kubens &> /dev/null; then
-        local kube_c=$(kubectx -c)
-        local kube_n=$(kubens -c)
+        local kube_c=$(kubectx -c 2>/dev/null || echo "none")
+        local kube_n=$(kubens -c 2>/dev/null || echo "none")
 
         local kubie_prefix=""
         if command -v kubie &> /dev/null; then
@@ -50,7 +50,6 @@ function prompt() {
         kube_info="${kubie_prefix}${kube_c}/${kube_n}%F{blue}"
     fi
 
-
     echo "%F{blue}$prefixes [$kube_info] › %f"
 }
 
@@ -59,7 +58,7 @@ function rprompt() {
     local git_branch=""
 
     if [ -n "$KUBECONFIG" ] || [ -f "$HOME/.kube/config" ]; then
-        kube_context="⚓️ $(kubectl config current-context)"
+        kube_context="⚓️ $(kubectl config current-context 2>/dev/null || echo "none")"
     fi
 
     if [ -n "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]; then
