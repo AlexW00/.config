@@ -27,17 +27,86 @@ alias g="git"
 alias v="nvim"
 
 # git aliases / functions
+# committing/pushing
 alias ga="git add"
 alias gaa="git add -A"
-alias gcm="git commit -m"
+alias gc="git commit -m"
+alias gac="gaa && gc"
 alias gpo="git push origin"
-alias gs="git status"
-alias gac="gaa && gcm"
-alias gacp="gacp && gpo"
+function gacp() {
+  local commit_message=$1
+  if [ -z "$commit_message" ]; then
+    echo "Please provide a commit message as an argument."
+  else
+    gac "$1" && gpo
+  fi
+}
 
-# show last commits
+# inspecting
+alias gs="git status"
 alias gl="git log --oneline -n 10"
 
-alias gc="git stash && git checkout && git stash pop"
-alias gb="git stash && git checkout -b && git stash pop"
-alias gbl="git stash && git branch -a && git stash pop"
+# branching
+switch_branch() {
+    local branch=$1
+    local create_new=$2
+
+    echo "Stashing changes..."
+    git stash
+
+    if [ "$create_new" = true ]; then
+        echo "Creating branch $branch..."
+        if git checkout -b "$branch"; then
+            echo "Successfully created branch $branch"
+        else
+            echo "Failed to create branch $branch"
+            git stash pop
+            return 1
+        fi
+    else
+        echo "Switching to branch $branch..."
+        if git checkout "$branch"; then
+            echo "Successfully switched to branch $branch"
+        else
+            echo "Branch $branch does not exist."
+            echo -n "Do you want to create it? (y/n): "
+            read create_branch
+            if [ "$create_branch" = "y" ]; then
+                echo "Creating branch $branch..."
+                if git checkout -b "$branch"; then
+                    echo "Successfully created branch $branch"
+                else
+                    echo "Failed to create branch $branch"
+                    git stash pop
+                    return 1
+                fi
+            else
+                echo "Aborting switch."
+                git stash pop
+                return 1
+            fi
+        fi
+    fi
+
+    echo "Restoring changes..."
+    git stash pop
+}
+
+gbc() {
+  local branch=$1
+  if [ -z "$branch" ]; then
+    branch=$(git branch -a | grep -v '\*' | sed 's/.* //' | fzf)
+  fi
+  switch_branch "$branch" false
+}
+
+gbn() {
+  local branch=$1
+  if [ -z "$branch" ]; then
+    echo "Please provide a branch name as an argument."
+  else
+    switch_branch "$1" true
+  fi
+}
+
+alias gbl="git branch -a"
