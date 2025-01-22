@@ -109,4 +109,41 @@ gbn() {
   fi
 }
 
-alias gbl="git branch -a"
+
+# changes
+
+# clear all working changes
+function gdall() {
+  #1. ask for confirmation
+  local do_confirm=false
+  if [ "$1" = "-y" ]; then
+    do_confirm=false
+  else
+    echo -n "Are you sure you want to clear all changes? (y/n): "
+    read confirm
+    if [ "$confirm" = "y" ]; then
+      do_confirm=true
+    else
+      echo "Aborting clear."
+      return 1
+    fi
+  fi
+
+  if [ "$do_confirm" = true ]; then
+    git checkout -- .
+  fi
+}
+
+# discard single file changes
+function gd() {
+  local file=$1
+  # if file = all, clear all changes
+  if [ "$file" = "all" ]; then
+    gdall
+    return 0
+  elif [ -z "$file" ]; then
+    # let user pick via fzf with preview
+    file=$(git status -s | fzf --preview 'git diff --color=always -- {-1}' | awk '{print $2}')
+  fi
+  git checkout -- "$file"
+}
