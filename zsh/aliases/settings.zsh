@@ -2,6 +2,10 @@ function git-settings() {
     git -C "$CONFIG" "$@"
 }
 
+# opens $HOME/.config via fzf, and if an item is selected, open it in $EDITOR
+alias settings='(cd $HOME/.config && fzf --preview "cat {}" | xargs -r $EDITOR)'
+alias settings-vifm='vifm $HOME/.config'
+
 alias settings-status='git-settings status'
 alias settings-diff='git-settings diff'
 alias settings-add='git-settings add'

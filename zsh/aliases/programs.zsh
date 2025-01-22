@@ -25,3 +25,11 @@ alias f="flux"
 alias h="helm"
 alias g="git"
 alias v="nvim"
+
+# git aliases / functions
+alias gaa="git add -A"
+alias gcm="git commit -m"
+alias gpo="git push origin"
+alias gs="git status"
+alias gacp="gaa && gcm && gpo"
+
