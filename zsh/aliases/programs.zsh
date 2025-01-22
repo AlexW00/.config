@@ -27,9 +27,17 @@ alias g="git"
 alias v="nvim"
 
 # git aliases / functions
+alias ga="git add"
 alias gaa="git add -A"
 alias gcm="git commit -m"
 alias gpo="git push origin"
 alias gs="git status"
-alias gacp="gaa && gcm && gpo"
+alias gac="gaa && gcm"
+alias gacp="gacp && gpo"
 
+# show last commits
+alias gl="git log --oneline -n 10"
+
+alias gc="git stash && git checkout && git stash pop"
+alias gb="git stash && git checkout -b && git stash pop"
+alias gbl="git stash && git branch -a && git stash pop"
