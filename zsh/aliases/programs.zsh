@@ -23,7 +23,6 @@ alias dr="docker"
 alias k="kubectl"
 alias f="flux"
 alias h="helm"
-alias g="git"
 alias v="nvim"
 
 # git aliases / functions
@@ -42,11 +41,9 @@ function gacp() {
   fi
 }
 
-# inspecting
-alias gs="git status"
-alias gl="git log --oneline -n 10"
 
 # branching
+
 switch_branch() {
     local branch=$1
     local create_new=$2
@@ -65,6 +62,11 @@ switch_branch() {
         fi
     else
         echo "Switching to branch $branch..."
+        # if branch empty, let user pick via fzf
+        if [ -z "$branch" ]; then
+            branch=$(git branch -a | grep -v '\*' | sed 's/.* //' | fzf)
+        fi
+
         if git checkout "$branch"; then
             echo "Successfully switched to branch $branch"
         else
@@ -109,9 +111,6 @@ gbn() {
   fi
 }
 
-
-# changes
-
 # clear all working changes
 function gdall() {
   #1. ask for confirmation
@@ -146,4 +145,114 @@ function gd() {
     file=$(git status -s | fzf --preview 'git diff --color=always -- {-1}' | awk '{print $2}')
   fi
   git checkout -- "$file"
+}
+
+# reset branch to commit and put changes into working tree
+function gr() {
+  local commit
+  local type=$1
+  if [ -z "$commit" ]; then
+    commit=$(git log --oneline | fzf --preview 'git show --color=always --pretty=medium --stat {1}' | awk '{print $1}')
+    echo "Selected commit: $commit"
+    # if commit is empty or smaller than 3 chars, abort
+    if [ -z "$commit" ] || [ ${#commit} -lt 3 ]; then
+      echo "Invalid commit. Aborting reset."
+      return 1
+    fi
+  fi
+  if [ -z "$type" ]; then
+    # ask user soft/hard
+    echo -n "Do you want to reset to $commit with --soft or --hard? (s/h): "
+    read type
+    if [ "$type" = "s" ]; then
+      type="--soft"
+    elif [ "$type" = "h" ]; then
+      type="--hard"
+    else
+      echo "Invalid option. Aborting reset."
+      return 1
+    fi
+  elif [ "$type" != "--soft" ] && [ "$type" != "--hard" ]; then
+    echo "Invalid option. Aborting reset. (use --soft or --hard as second argument)"
+    return 1
+  fi
+  # git reset --soft "$commit"
+  echo "Resetting to $commit with $type..."
+}
+
+# Main git wrapper function
+function g() {
+    local cmd=$1
+    shift # Remove first argument
+
+    case "$cmd" in
+        # Basic operations
+        "add")
+            if [ "$1" = "all" ]; then
+                git add -A
+            else
+                git add "$@"
+            fi
+            ;;
+        "commit")
+            case "$1" in
+                "ls")
+                    # see commits in fzf with preview
+                    git log --oneline | fzf --preview 'git show --color=always --pretty=medium --stat {1}' | awk '{print $1}'
+                    ;;
+                *)
+                    git commit -m "$@"
+                    ;;
+            esac
+            ;;
+        "status")
+            git status -s | fzf --preview 'git diff --color=always -- {-1}' | awk '{print $2}'
+            ;;
+        # Branch operations
+        "branch")
+            case "$1" in
+                "ls")
+                    git branch -a | grep -v '\*' | sed 's/.* //' | fzf
+                    ;;
+                "new")
+                    shift
+                    switch_branch "$1" true
+                    ;;
+                "checkout")
+                    shift
+                    switch_branch "$1" false
+                    ;;
+                *)
+                    git branch "$@"
+                    ;;
+            esac
+            ;;
+            
+        # Change management
+        "discard")
+            if [ -z "$1" ]; then
+                gd
+            elif [ "$1" = "all" ]; then
+                gdall
+            else
+                git checkout -- "$1"
+            fi
+            ;;
+          
+        # Quick combos
+        "save")
+            # Quick add + commit + push
+            local message=$1
+            if [ -z "$message" ]; then
+                echo "Please provide a commit message"
+                return 1
+            fi
+            git add -A && git commit -m "$message" && git push origin
+            ;;
+            
+        # Fallback for any other git commands
+        *)
+            git "$cmd" "$@"
+            ;;
+    esac
 }
