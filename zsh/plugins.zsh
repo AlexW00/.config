@@ -45,4 +45,4 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 # bind to enter
 bindkey '^e' jq-complete
 
-clean_plugins
+# clean_plugins
