@@ -9,10 +9,15 @@ if [ ! -d $COMPLETION_DIR ]; then
 fi
 
 function create_completion_if_not_exists() {
-    if [ ! -f $1 ]; then
-        echo "Creating completion file: $1"
-        $2 $3 zsh > $1
+    local file=$1
+    local command=$2
+    local completion_command=$3
+    if [ -f $file ]; then
+        echo "Completion file already exists: $file"
+        return
     fi
+    echo "Creating completion file: $file"
+    $command $completion_command zsh > $file
 }
 
 function load_completion() {
