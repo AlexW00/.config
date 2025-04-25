@@ -13,7 +13,6 @@ function create_completion_if_not_exists() {
     local command=$2
     local completion_command=$3
     if [ -f $file ]; then
-        echo "Completion file already exists: $file"
         return
     fi
     echo "Creating completion file: $file"
