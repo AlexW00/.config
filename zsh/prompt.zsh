@@ -13,30 +13,31 @@ function prompt() {
         prefixes="$prefixes🔓"
     fi
 
-    if [[ "$PWD" == *"$UFP_DIR"* ]]; then
+    if [ -n "$UFP_DIR" ] && [[ "$PWD" == *"$UFP_DIR"* ]]; then
         prefixes="$prefixes💸"
     fi
 
-    if [[ "$PWD" == *"$DESIGN_SYSTEM_DIR"* ]]; then
+    if [ -n "$DESIGN_SYSTEM_DIR" ] && [[ "$PWD" == *"$DESIGN_SYSTEM_DIR"* ]]; then
         prefixes="$prefixes🎨"
     fi
 
-    if [[ "$PWD" == *"$DVPDEV_INFRA_DIR"* ]]; then
+    if [ -n "$DVPDEV_INFRA_DIR" ] && [[ "$PWD" == *"$DVPDEV_INFRA_DIR"* ]]; then
         prefixes="$prefixes⚙️"
     fi
 
-    if [[ "$PWD" == *"$GITOPS_DEPLOYMENTS_DIR"* ]]; then
+    if [ -n "$GITOPS_DEPLOYMENTS_DIR" ] && [[ "$PWD" == *"$GITOPS_DEPLOYMENTS_DIR"* ]]; then
         prefixes="$prefixes🚀"
     fi
 
-    if [[ "$PWD" == *"$DV_DEVTOOLS_DIR"* ]]; then
+    if [ -n "$DV_DEVTOOLS_DIR" ] && [[ "$PWD" == *"$DV_DEVTOOLS_DIR"* ]]; then
         prefixes="$prefixes🔧"
     fi
 
     local kube_info="" # context + NS
+    local kube_brackets=""
 
-    # if kubectx and kubens are installed
-    if command -v kubectx &> /dev/null && command -v kubens &> /dev/null; then
+    # if kubectl is installed and kubectx and kubens are available
+    if command -v kubectl &> /dev/null && command -v kubectx &> /dev/null && command -v kubens &> /dev/null; then
         local kube_c=$(kubectx -c 2>/dev/null || echo "none")
         local kube_n=$(kubens -c 2>/dev/null || echo "none")
 
@@ -48,9 +49,10 @@ function prompt() {
         fi
 
         kube_info="${kubie_prefix}${kube_c}/${kube_n}%F{blue}"
+        kube_brackets="[$kube_info] "
     fi
 
-    echo "%F{blue}$prefixes [$kube_info] › %f"
+    echo "%F{blue}$prefixes ${kube_brackets}› %f"
 }
 
 function rprompt() {
