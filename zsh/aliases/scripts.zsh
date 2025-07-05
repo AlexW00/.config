@@ -20,3 +20,5 @@ alias work-day="python3 $SCRIPTS/Python/work-time-tracker.py today"
 alias work-adjust="python3 $SCRIPTS/Python/work-time-tracker.py adjust"
 alias get-yml-value="$SCRIPTS/Bash/get-yml-value.sh"
 alias get-yaml-value="$SCRIPTS/Bash/get-yml-value.sh"
+
+alias link-folders="$SCRIPTS/Bash/link-folders.sh"
