@@ -22,3 +22,5 @@ alias get-yml-value="$SCRIPTS/Bash/get-yml-value.sh"
 alias get-yaml-value="$SCRIPTS/Bash/get-yml-value.sh"
 
 alias link-folders="$SCRIPTS/Bash/link-folders.sh"
+
+alias anki-patch="cd $HOME/Developer/anki-patcher && scripts/process_inboxes.sh"

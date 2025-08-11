@@ -47,6 +47,7 @@ load_completion helm
 load_completion docker
 load_completion talosctl
 load_completion op
+load_completion nvm
 load_completion hcloud
 load_completion yq "shell-completion"
 load_completion gitlab-ci-local "--completion"
