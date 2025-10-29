@@ -39,6 +39,7 @@ install_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosugge
 install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting"
 install_plugin "ansible-server" "https://github.com/viasite-ansible/zsh-ansible-server.git"
 install_plugin "jq" "https://github.com/reegnz/jq-zsh-plugin"
+install_plugin "zsh-fzf-history-search" "https://github.com/joshskidmore/zsh-fzf-history-search"
 
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
