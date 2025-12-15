@@ -32,3 +32,5 @@ source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/completions.zsh
 
 source $ZSH/oh-my-zsh.sh
+# Added by Antigravity
+export PATH="/Users/alexweichart/.antigravity/antigravity/bin:$PATH"

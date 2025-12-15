@@ -8,6 +8,7 @@ export GEM_HOME="$HOME/gems"
 export GOPATH=$HOME/go
 export KUBECONFIG="$HOME/.kube/config"
 
-export CLOUD="$HOME/Dropbox"
+export CLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+export ICLOUD="$CLOUD"
 export NOTES="$CLOUD/Documents/Other/Notes"
 export CHEATSHEETS="$CLOUD/Documents/Other/Cheatsheets"
