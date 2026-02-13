@@ -1,18 +1,3 @@
-# user variables
-export XDG_CONFIG_HOME="$HOME/.config"
-export EDITOR=nvim
-export SCRIPTS="$HOME/Developer/Scripts"
-
-# Programs
-export GEM_HOME="$HOME/gems"
-export GOPATH=$HOME/go
-export KUBECONFIG="$HOME/.kube/config"
-
-export CLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
-export ICLOUD="$CLOUD"
-export NOTES="$CLOUD/Documents/Other/Notes"
-export CHEATSHEETS="$CLOUD/Documents/Other/Cheatsheets"
-
 if [[ "$TERM_PROGRAM" == "vscode" ]]; then
     # Load VS Code shell integration if available
     [[ -f "${HOME}/.config/vscode-shell-integration.zsh" ]] && source "${HOME}/.config/vscode-shell-integration.zsh"

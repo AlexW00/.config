@@ -28,9 +28,12 @@ if [ -d "$ZSH_CONFIG/local" ]; then
     sourceAll "$ZSH_CONFIG/local"
 fi
 
+# if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+#   export PROMPT="%n@%m %1~ %# "
+# fi
+
 source $ZSH_CONFIG/plugins.zsh
 source $ZSH_CONFIG/completions.zsh
+source $ZSH_CONFIG/exports.zsh
 
 source $ZSH/oh-my-zsh.sh
-# Added by Antigravity
-export PATH="/Users/alexweichart/.antigravity/antigravity/bin:$PATH"

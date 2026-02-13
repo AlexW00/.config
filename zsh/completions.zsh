@@ -54,6 +54,7 @@ load_completion gitlab-ci-local "--completion"
 load_completion velero
 load_completion npm
 load_completion k6
+load_completion gardenctl
 
 # custom completions
 load_tofu_completion
